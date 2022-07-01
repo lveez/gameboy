@@ -1,0 +1,61 @@
+addressing modes ->
+
+    8 bit transfer & i/o 
+
+    imm8 -> reg
+    reg -> reg
+    (reg) -> reg
+    reg -> (reg)
+    imm8 -> (reg)
+    (FF00+reg) -> reg
+    reg -> (FF00+reg)
+    (FF00+imm8) -> reg
+    reg -> (FF00+imm8)
+    (imm16) -> reg
+    reg -> (imm16)
+    (reg1) -> reg2 [increment reg1]
+    (reg1) -> reg2 [decrement reg2]
+    reg1 -> (reg2) [increment reg2]
+    reg1 -> (reg2) [decrement reg2]
+
+    16 bit transfer
+
+    imm16 -> reg16
+    reg16 -> reg16
+    reg16 -> stack
+    stack -> reg16
+    imm8 -> SP [SP = SP + imm8]
+    SP -> (imm16)
+
+    8 bit arithmetic
+
+    reg8 -> reg8 [A = A + reg8]
+    imm8 -> reg8 [A = A + imm8]
+    (reg16) -> reg8 [A = A + (reg16)]
+
+
+getting data:
+    can need to fetch data from memory:
+        imm16
+        imm16 as ptr
+        imm8
+        FF00 + imm8 as ptr
+    
+    can need to fetch data from register:
+        reg16 as ptr
+        FF00 + reg8 as ptr
+        reg16
+        reg8
+
+what do we need to execute an instruction?
+    - what data do we need to fetch?
+        is it 8 or 16 bit? is it register or from memory or from stack?
+    - are there conditions? i.e check flags
+    - what do we then do with that data?
+    - do we need to now update flags?
+    
+https://ia803208.us.archive.org/9/items/GameBoyProgManVer1.1/GameBoyProgManVer1.1.pdf
+https://izik1.github.io/gbops/
+
+
+
