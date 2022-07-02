@@ -10,10 +10,25 @@ includes that are useful throughout the project.
 #include <stdio.h>
 #include <stdbool.h>
 
+// for sleep
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+
 typedef uint8_t u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
 typedef uint64_t u64;
+
+#define Z_FLAG 7
+#define N_FLAG 6
+#define H_FLAG 5
+#define C_FLAG 4
+
+typedef struct GB16Bit 
+{
+    u8 high;
+    u8 low;
+} GB16Bit;
 
 
 // by defualt have no debug printing
